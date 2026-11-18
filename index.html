@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brady Rasor — Finance & AI Systems</title>
+<meta name="description" content="Brady Rasor — finance student at Virginia Tech building AI-driven trading research systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0e1a2b; --ink-2:#3a4a5e; --muted:#6b7a8c;
+  --paper:#f6f2ea; --card:#fffdf8; --line:#e2dccf;
+  --accent:#c2410c; --accent-soft:#fbe7dc; --navy:#13294b;
+  --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#eef2f7;--ink-2:#c4cdd8;--muted:#8d9aab;--paper:#0d1522;--card:#131d2d;--line:#24324a;--accent:#fb923c;--accent-soft:#2a1d14;--navy:#0a1220}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.mark{font:800 20px var(--serif);letter-spacing:-.02em;text-decoration:none}
+.mark span{color:var(--accent)}
+nav ul{display:flex;gap:26px;list-style:none;font-size:14px;font-weight:500}
+nav ul a{text-decoration:none;color:var(--ink-2)}
+nav ul a:hover{color:var(--accent)}
+@media(max-width:700px){nav ul{display:none}}
+
+header.hero{padding:96px 0 72px;border-bottom:1px solid var(--line)}
+.eyebrow{font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:22px}
+h1{font:800 clamp(44px,7.5vw,88px)/.98 var(--serif);letter-spacing:-.035em;max-width:14ch}
+h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.lede{font-size:clamp(17px,2vw,20px);color:var(--ink-2);max-width:56ch;margin:28px 0 36px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{transform:translateY(-1px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border-top:1px solid var(--line)}
+.stat{padding:22px 18px 0 0}
+.stat b{display:block;font:600 34px var(--serif);letter-spacing:-.02em}
+.stat small{color:var(--muted);font-size:13px}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+section{padding:84px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:220px 1fr;gap:40px;margin-bottom:40px}
+.sec-head .num{font:500 13px var(--mono);color:var(--muted)}
+h2{font:600 clamp(30px,4vw,42px)/1.1 var(--serif);letter-spacing:-.02em}
+@media(max-width:700px){.sec-head{grid-template-columns:1fr;gap:8px}}
+.body{margin-left:260px}
+@media(max-width:700px){.body{margin-left:0}}
+.body p{color:var(--ink-2);max-width:62ch;margin-bottom:16px}
+
+.project{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px;margin-bottom:20px}
+.project .tag{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px;display:inline-block;margin-bottom:14px}
+.project h3{font:600 26px/1.2 var(--serif);letter-spacing:-.01em;margin-bottom:10px}
+.project p{color:var(--ink-2);margin-bottom:14px}
+.project ul{list-style:none;display:grid;gap:8px;margin:18px 0}
+.project li{padding-left:22px;position:relative;color:var(--ink-2);font-size:15px}
+.project li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{font:500 12px var(--mono);border:1px solid var(--line);padding:5px 10px;border-radius:8px;color:var(--ink-2)}
+.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 6px}
+.metric{border-left:3px solid var(--accent);padding:4px 0 4px 14px}
+.metric b{font:600 24px var(--serif);display:block}
+.metric small{font-size:12px;color:var(--muted)}
+.fine{font-size:12px!important;color:var(--muted)!important}
+@media(max-width:700px){.metric-row{grid-template-columns:1fr}}
+
+.timeline{position:relative}
+.role{display:grid;grid-template-columns:220px 1fr;gap:40px;padding:26px 0;border-top:1px solid var(--line)}
+.role:first-child{border-top:none;padding-top:0}
+.role .when{font:500 13px var(--mono);color:var(--muted);padding-top:6px}
+.role h3{font:600 22px var(--serif);letter-spacing:-.01em}
+.role .org{color:var(--accent);font-weight:600;font-size:15px;margin:2px 0 10px}
+.role p{color:var(--ink-2);max-width:60ch}
+@media(max-width:700px){.role{grid-template-columns:1fr;gap:4px}}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skillcol{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.skillcol h4{font:600 13px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:14px}
+.skillcol li{list-style:none;padding:6px 0;border-bottom:1px dashed var(--line);font-size:15px;display:flex;justify-content:space-between;gap:10px}
+.skillcol li:last-child{border:none}
+.status{font:500 11px var(--mono);color:var(--muted)}
+.status.done{color:#15803d}
+@media(max-width:800px){.skills{grid-template-columns:1fr}}
+
+.contact{background:var(--navy);color:#f6f2ea;border:none}
+.contact h2{color:#f6f2ea}
+.contact .num{color:#8d9aab}
+.contact p{color:#c4cdd8}
+.contact .btn{border-color:#f6f2ea}
+.contact .btn.primary{background:#f6f2ea;color:#13294b}
+footer{padding:28px 0;font:12px var(--mono);color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="#top" class="mark">Brady Rasor<span>.</span></a>
+  <ul><li><a href="#work">Work</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="eyebrow">Finance · Real Estate · AI Systems — Blacksburg, VA</div>
+  <h1>I build systems that <em>test ideas</em> before money does.</h1>
+  <p class="lede">Finance student at Virginia Tech's Pamplin College of Business. I designed and run an eight-agent AI team that researches, backtests and paper-trades options strategies — and kills the ones that don't survive real costs.</p>
+  <div class="cta">
+    <a class="btn primary" href="#work">See the work ↓</a>
+    <a class="btn" href="#contact">Get in touch</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>8</b><small>AI agents in my trading research team</small></div>
+    <div class="stat"><b>~30</b><small>lifeguards supervised</small></div>
+    <div class="stat"><b>2</b><small>yrs high-school soccer captain</small></div>
+    <div class="stat"><b>A.G.S.</b><small>earned through dual enrollment</small></div>
+  </div>
+</div></header>
+
+<section id="work"><div class="wrap">
+  <div class="sec-head"><div class="num">01 / Selected work</div><h2>Projects</h2></div>
+  <div class="body">
+    <article class="project">
+      <span class="tag">Quant research · Ongoing</span>
+      <h3>Options Trading Team — an AI agent desk</h3>
+      <p>A team of specialized AI agents modeled on a real trading desk: a scout, technical analyst, strategist, risk manager with veto power, portfolio manager, execution trader, position monitor and journal. It runs in the cloud every trading hour through Robinhood's official agentic trading interface, in paper mode, with risk limits and a kill switch enforced in code.</p>
+      <ul>
+        <li>Backtested classic intraday, oversold-bounce and post-earnings setups — and documented that they lose money once real spreads and time decay are counted.</li>
+        <li>Recorded real option quotes each round to replace modeled prices, finding real spreads averaged ~10% vs. the 6% the model assumed.</li>
+        <li>Found the first rule to hold up on unseen data: a 20-day breakout filter on large caps in a calm market regime.</li>
+        <li>Built a live dashboard comparing each strategy's P&amp;L to the S&amp;P 500 and a go-live checklist no strategy can skip.</li>
+      </ul>
+      <div class="metric-row">
+        <div class="metric"><b>+14.5%</b><small>avg / trade on held-out test data</small></div>
+        <div class="metric"><b>2.0</b><small>profit factor (65 test trades)</small></div>
+        <div class="metric"><b>3</b><small>strategies tracked side by side</small></div>
+      </div>
+      <p class="fine">Backtest and paper-trading results, not live returns. Past results don't predict future performance.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">Claude Code agents</span><span class="chip">Options pricing</span><span class="chip">Backtesting</span><span class="chip">Risk management</span><span class="chip">GitHub</span></div>
+    </article>
+    <article class="project">
+      <span class="tag">AI productivity · Ongoing</span>
+      <h3>Jarvis — a personal AI operating system</h3>
+      <p>A connected setup that gives an AI assistant long-term memory (an Obsidian knowledge vault synced to GitHub), scheduled nightly and weekly reviews, a learning loop that grades its own past decisions, and a live dashboard. Built to run my coursework, job and projects from one place.</p>
+      <div class="chips"><span class="chip">Automation</span><span class="chip">Knowledge management</span><span class="chip">Scheduled cloud tasks</span><span class="chip">Git</span></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="sec-head"><div class="num">02 / Track record</div><h2>Experience &amp; education</h2></div>
+  <div class="timeline">
+    <div class="role">
+      <div class="when">Dec 2023 — Present</div>
+      <div><h3>Head Lifeguard</h3><div class="org">Christiansburg Aquatic Center · Christiansburg, VA</div>
+      <p>Supervise a staff of about 30 lifeguards — accountable for safety calls under pressure while working through high school and college.</p></div>
+    </div>
+    <div class="role">
+      <div class="when">In progress</div>
+      <div><h3>B.S. Finance, Real Estate minor</h3><div class="org">Virginia Tech — Pamplin College of Business</div>
+      <p>Coursework includes Foundations of Business (MGT-1104). Rushing Rho Epsilon Iota, VT's professional real estate fraternity.</p></div>
+    </div>
+    <div class="role">
+      <div class="when">May 2025</div>
+      <div><h3>Associate in General Studies</h3><div class="org">New River Community College</div>
+      <p>Earned a full associate degree through dual enrollment while finishing high school.</p></div>
+    </div>
+    <div class="role">
+      <div class="when">2022 — 2024</div>
+      <div><h3>Team Captain, Soccer</h3><div class="org">Christiansburg High School · Virginia United club</div>
+      <p>Captained the high-school team while competing at club level; still playing intramurals at Virginia Tech.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="sec-head"><div class="num">03 / Toolkit</div><h2>Skills &amp; certifications</h2></div>
+  <div class="skills">
+    <div class="skillcol"><h4>Finance</h4><ul>
+      <li>Options strategies &amp; Greeks</li><li>Backtesting &amp; validation</li><li>Risk limits &amp; position sizing</li><li>Real estate fundamentals</li></ul></div>
+    <div class="skillcol"><h4>Technology</h4><ul>
+      <li>AI agents (Claude Code)</li><li>Python</li><li>Git &amp; GitHub</li><li>Dashboards &amp; automation</li></ul></div>
+    <div class="skillcol"><h4>Certifications</h4><ul>
+      <li>Bloomberg Market Concepts <span class="status">in progress</span></li>
+      <li>J.P. Morgan IB Job Simulation <span class="status">in progress</span></li>
+      <li>CFI Accounting Fundamentals <span class="status">in progress</span></li>
+      <li>Lifeguard / CPR / First Aid <span class="status done">current</span></li></ul></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <div class="sec-head"><div class="num">04 / Contact</div><h2>Let's talk.</h2></div>
+  <div class="body">
+    <p>Open to internships and projects in finance, real estate and applied AI. Find my code on GitHub.</p>
+    <div class="cta" style="margin-top:24px">
+      <a class="btn primary" href="https://github.com/bradyrasor">GitHub ↗</a>
+    </div>
+  </div>
+</div></section>
+
+<footer>© 2026 Brady Rasor · Built by hand, tested before shipped.</footer>
+</body>
+</html>
